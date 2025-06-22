@@ -1,68 +1,80 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --color-bg: #f7f3ec;
+    --color-bg-section: #d8c3a5;
+    --color-primary: #6e4b29; /* brąz głęboki */
+    --color-accent: #c97a40; /* rudy/cynamon */
+    --color-copper: #b3541e; /* miedź */
+    --color-gold: #e2c275; /* złoto */
+    --color-brown-light: #a58d7f; /* jasny brąz */
   }
-  a:hover {
-    color: #747bff;
+
+  /* html,
+  body {
+    overflow-x: hidden; //zabezpzczenie przed overflowem jakiegos elementu na frocing złe aspect ratio
+  } */
+}
+
+@layer components {
+  .btn-main {
+    @apply bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-copper)] text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg;
+    @apply hover:shadow-xl hover:-translate-y-1 transform transition-all duration-300;
+    @apply focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-2;
+    @apply active:scale-95;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .btn-secondary {
+    @apply bg-[var(--color-bg)] border-2 border-[var(--color-accent)] text-[var(--color-accent)] px-6 py-3 rounded-full text-lg font-semibold;
+    @apply hover:bg-[var(--color-accent)] hover:text-white hover:shadow-lg hover:-translate-y-1 transform transition-all duration-300;
+    @apply focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-2;
   }
+
+  .btn-outline {
+    @apply border border-[var(--color-primary)] text-[var(--color-primary)] px-4 py-2 rounded-lg font-medium;
+    @apply hover:bg-[var(--color-primary)] hover:text-[var(--color-bg)] transition-all duration-300;
+    @apply focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-custom {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Custom animations */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-pulse-custom {
+  animation: pulse-custom 2s ease-in-out infinite;
 }

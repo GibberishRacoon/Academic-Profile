@@ -1,35 +1,75 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import Navbar from "./components/Navbar/Navbar";
+// import Footer from "./components/Footer/Footer";
+
+// // Strony (stwórz pliki w src/pages)
+// import Home from "./pages/Home";
+// // import About from "./pages/About";
+// // import Wspolpraca from "./pages/Wspolpraca";
+// // import Blog from "./pages/Blog";
+// // import CzymSieZajmuje from "./pages/CzymSieZajmuje";
+// // import Contact from "./pages/Contact";
+
+// function App() {
+//   return (
+//     <Router>
+//       <div className="flex flex-col min-h-screen bg-[var(--color-bg)] overflow-x-hidden">
+//         <Navbar />
+//         <main className="flex-grow">
+//           <Routes>
+//             <Route path="/" element={<Home />} />
+//             {/* <Route path="/about" element={<About />} />
+//             <Route path="/wspolpraca" element={<Wspolpraca />} />
+//             <Route path="/blog" element={<Blog />} />
+//             <Route path="/czym-sie-zajmuje" element={<CzymSieZajmuje />} />
+//             <Route path="/contact" element={<Contact />} /> */}
+//             {/* Możesz dodać 404: */}
+//             {/* <Route path="*" element={<NotFound />} /> */}
+//           </Routes>
+//         </main>
+//         <Footer />
+//       </div>
+//     </Router>
+//   );
+// }
+
+// export default App;
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+
+// Strony
+import Home from "./pages/Home";
+import MyAchievements from "./pages/MyAchievements";
+// import About from "./pages/About";
+// import Wspolpraca from "./pages/Wspolpraca";
+// import Blog from "./pages/Blog";
+// import CzymSieZajmuje from "./pages/CzymSieZajmuje";
+// import Contact from "./pages/Contact";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div className="flex flex-col min-h-screen bg-[var(--color-bg)] overflow-x-hidden">
+        <Navbar />
+        <main className="flex-grow pt-16 sm:pt-10">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/dorobek-naukowy" element={<MyAchievements />} />
+            {/* <Route path="/o-mnie" element={<About />} />
+            <Route path="/wspolpraca" element={<Wspolpraca />} />
+            <Route path="/dzialalnosc-edukacyjna" element={<Blog />} />
+            <Route path="/media" element={<CzymSieZajmuje />} />
+            <Route path="/kontakt" element={<Contact />} /> */}
+            {/* Możesz dodać 404: */}
+            {/* <Route path="*" element={<NotFound />} /> */}
+          </Routes>
+        </main>
+        <Footer />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
