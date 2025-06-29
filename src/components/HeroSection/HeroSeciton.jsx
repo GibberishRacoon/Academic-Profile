@@ -2,6 +2,7 @@ import avatar from "../../assets/Gosia-20.jpg";
 import avatarMobile from "../../assets/Gosia-20-mobile.webp"; // 400x600px
 import avatarTablet from "../../assets/Gosia-20-tablet.webp"; // 600x900px
 import avatarDesktop from "../../assets/Gosia-20-desktop.webp"; // 800x1200px
+import { Link } from "react-router-dom";
 
 function HeroSection() {
   return (
@@ -26,10 +27,13 @@ function HeroSection() {
               na uczelni.
             </p>
 
-            <button className="btn-main inline-flex items-center gap-2 hover:gap-4 transition-all duration-300">
+            <Link
+              to="/o-mnie"
+              className="btn-main inline-flex items-center gap-2 hover:gap-4 transition-all duration-300"
+            >
               Zobacz czym się zajmuję
               <span className="text-lg">→</span>
-            </button>
+            </Link>
           </div>
 
           {/* Image Section */}
