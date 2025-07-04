@@ -63,9 +63,16 @@ export default function Navbar() {
           className="group flex items-center space-x-2 text-[var(--color-primary)] font-bold text-xl sm:text-2xl hover:text-[var(--color-accent)] transition-colors duration-300"
         >
           <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border-2 border-[var(--color-primary)] group-hover:border-[var(--color-accent)] rounded-lg text-xs sm:text-sm font-semibold transition-colors duration-300">
-            MG
+            MP
           </div>
-          <span className="hidden sm:block">Dr Małgorzata</span>
+          <div className="hidden sm:block">
+            <div className="text-base sm:text-lg font-bold leading-tight">
+              dr Małgorzata Pilecka
+            </div>
+            <div className="text-xs text-[var(--color-primary)]/70 font-normal -mt-1">
+              prof. AkAt
+            </div>
+          </div>
         </Link>
 
         {/* Desktop Menu */}

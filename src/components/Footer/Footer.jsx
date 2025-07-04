@@ -1,3 +1,5 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import {
   FaFacebookF,
   FaInstagram,
@@ -5,25 +7,28 @@ import {
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
+  FaExternalLinkAlt,
+  FaShieldAlt,
+  FaCookie,
+  FaFileContract,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const navigationLinks = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
+    { href: "/o-mnie", label: "O mnie" },
     { href: "/wspolpraca", label: "Współpraca" },
-    { href: "/czym-sie-zajmuje", label: "Czym się zajmuję" },
-    { href: "/blog", label: "Blog" },
-    { href: "/contact", label: "Contact" },
+    { href: "/dzialalnosc-edukacyjna", label: "Działalność edukacyjna" },
+    { href: "/media", label: "Media" },
+    { href: "/kontakt", label: "Kontakt" },
   ];
 
   const quickLinks = [
+    { href: "/dorobek-naukowy", label: "Dorobek naukowy" },
     { href: "/publikacje", label: "Publikacje" },
     { href: "/badania", label: "Badania" },
-    { href: "/dorobek", label: "Dorobek naukowy" },
     { href: "/dydaktyka", label: "Dydaktyka" },
   ];
 
@@ -52,20 +57,23 @@ export default function Footer() {
     <footer className="mt-16 bg-gradient-to-b from-[var(--color-bg)] to-[var(--color-bg-section)]">
       {/* Main Footer Content */}
       <div className="bg-[var(--color-bg-section)]/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* About Section */}
             <div className="lg:col-span-2 space-y-6">
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 flex items-center justify-center border-2 border-[var(--color-primary)] rounded-xl text-sm font-bold text-[var(--color-primary)] bg-[var(--color-bg)]">
-                  MG
+                  MP
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-[var(--color-primary)]">
-                    Dr Małgorzata
+                    dr Małgorzata Pilecka, prof. AkAt
                   </h3>
                   <p className="text-sm text-[var(--color-primary)]/80">
-                    Profesor akademicki
+                    Katedra Pedagogiki Przedszkolnej i Wczesnoszkolnej
+                  </p>
+                  <p className="text-xs text-[var(--color-primary)]/70">
+                    Akademia Ateneum w Gdańsku
                   </p>
                 </div>
               </div>
@@ -76,19 +84,37 @@ export default function Footer() {
                 zapoznania się z moim dorobkiem naukowym.
               </p>
 
-              {/* Contact Info */}
+              {/* Contact Info with Bot Protection */}
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-[var(--color-primary)]/80">
-                  <FaEnvelope className="w-4 h-4 text-[var(--color-accent)]" />
-                  <span className="text-sm">malgorzata@akademia.edu.pl</span>
+                  <FaEnvelope className="w-4 h-4 text-[var(--color-accent)] flex-shrink-0" />
+                  <span className="text-sm font-mono select-all">
+                    m.pilecka{"\u0040"}ateneum.edu.pl
+                  </span>
                 </div>
                 <div className="flex items-center space-x-3 text-[var(--color-primary)]/80">
-                  <FaPhone className="w-4 h-4 text-[var(--color-accent)]" />
-                  <span className="text-sm">+48 123 456 789</span>
+                  <FaPhone className="w-4 h-4 text-[var(--color-accent)] flex-shrink-0" />
+                  <span className="text-sm font-mono select-all">
+                    503{"\u00A0"}372{"\u00A0"}710
+                  </span>
+                </div>
+                <div className="flex items-start space-x-3 text-[var(--color-primary)]/80">
+                  <FaMapMarkerAlt className="w-4 h-4 text-[var(--color-accent)] flex-shrink-0 mt-0.5" />
+                  <div className="text-sm">
+                    <div>ul. 3 Maja 25a</div>
+                    <div>80-802 Gdańsk</div>
+                  </div>
                 </div>
                 <div className="flex items-center space-x-3 text-[var(--color-primary)]/80">
-                  <FaMapMarkerAlt className="w-4 h-4 text-[var(--color-accent)]" />
-                  <span className="text-sm">Uniwersytet, Wydział, Kraków</span>
+                  <FaExternalLinkAlt className="w-4 h-4 text-[var(--color-accent)] flex-shrink-0" />
+                  <a
+                    href="https://orcid.org/0000-0002-4815-2949"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm hover:text-[var(--color-accent)] transition-colors duration-300"
+                  >
+                    ORCID: 0000-0002-4815-2949
+                  </a>
                 </div>
               </div>
 
@@ -176,6 +202,16 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* GDPR Privacy Notice Section */}
+      <div className="bg-[var(--color-bg-section)]/40 border-t border-[var(--color-primary)]/10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-center gap-2 text-sm text-[var(--color-primary)]/70">
+            <FaShieldAlt className="w-4 h-4 text-[var(--color-accent)]" />
+            <span>Twoje dane są chronione zgodnie z RODO</span>
+          </div>
+        </div>
+      </div>
+
       {/* Bottom Bar */}
       <div className="bg-[var(--color-primary)] text-[var(--color-bg)]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -183,31 +219,34 @@ export default function Footer() {
             {/* Copyright */}
             <div className="flex items-center space-x-4">
               <span className="text-sm opacity-90">
-                © {currentYear} Dr Małgorzata. Wszystkie prawa zastrzeżone.
+                © {currentYear} dr Małgorzata Pilecka, prof. AkAt. Wszystkie
+                prawa zastrzeżone.
               </span>
             </div>
 
             {/* Center Logo */}
             <div className="hidden md:flex items-center justify-center">
               <div className="w-8 h-8 flex items-center justify-center border border-[var(--color-bg)]/50 rounded-lg text-xs font-semibold opacity-80 hover:opacity-100 transition-opacity duration-300">
-                MG
+                MP
               </div>
             </div>
 
-            {/* Legal Links */}
-            <div className="flex flex-wrap items-center gap-6 text-sm">
+            {/* Legal Links - Simplified for Bottom */}
+            <div className="flex flex-wrap items-center gap-4 text-sm">
               <Link
                 to="/terms"
                 className="opacity-90 hover:opacity-100 hover:text-[var(--color-gold)] transition-all duration-300"
               >
                 Regulamin
               </Link>
+              <span className="opacity-50">•</span>
               <Link
                 to="/privacy"
                 className="opacity-90 hover:opacity-100 hover:text-[var(--color-gold)] transition-all duration-300"
               >
-                Polityka prywatności
+                Prywatność
               </Link>
+              <span className="opacity-50">•</span>
               <Link
                 to="/cookies"
                 className="opacity-90 hover:opacity-100 hover:text-[var(--color-gold)] transition-all duration-300"

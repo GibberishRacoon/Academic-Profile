@@ -22,6 +22,11 @@ const ContactForm = () => {
   // Formspree hook - using environment variable
   const [state, handleFormspreeSubmit] = useForm(
     import.meta.env.VITE_FORMSPREE_FORM_ID,
+    {
+      headers: {
+        Accept: "application/json",
+      },
+    },
   );
 
   const handleChange = (e) => {

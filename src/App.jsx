@@ -7,7 +7,10 @@ import Home from "./pages/Home";
 import MyAchievements from "./pages/MyAchievements";
 import MediaSection from "./pages/MediaSection";
 import Contact from "./pages/ContactForm";
-// import About from "./pages/About";
+import About from "./pages/AboutMeSection";
+import CookiesPolicy from "./pages/Terms/CookiesPolicy";
+import PrivacyPolicy from "./pages/Terms/PrivacyPolicy";
+import Terms from "./pages/Terms/Terms";
 // import Wspolpraca from "./pages/Wspolpraca";
 // import Blog from "./pages/Blog";
 // import CzymSieZajmuje from "./pages/CzymSieZajmuje";
@@ -24,12 +27,16 @@ function App() {
             <Route path="/dorobek-naukowy" element={<MyAchievements />} />
             <Route path="/media" element={<MediaSection />} />
             <Route path="/kontakt" element={<Contact />} />
-            {/* <Route path="/o-mnie" element={<About />} />
-            <Route path="/wspolpraca" element={<Wspolpraca />} />
+            <Route path="/o-mnie" element={<About />} />
+
+            <Route path="/cookies" element={<CookiesPolicy />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<Terms />} />
+            {/* <Route path="/wspolpraca" element={<Wspolpraca />} />
             <Route path="/dzialalnosc-edukacyjna" element={<Blog />} />
             <Route path="/media" element={<CzymSieZajmuje />} />
             <Route path="/kontakt" element={<Contact />} /> */}
-            {/* Możesz dodać 404: */}
+            {/* Dodać 404: */}
             {/* <Route path="*" element={<NotFound />} /> */}
           </Routes>
         </main>
