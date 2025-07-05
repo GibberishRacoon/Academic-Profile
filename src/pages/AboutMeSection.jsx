@@ -344,9 +344,6 @@ const AboutMeSection = () => {
                 <div className="space-y-4 text-[var(--color-primary)] leading-relaxed">
                   <p>
                     Mam dwie cudowne Córeczki:{" "}
-                    <span className="font-semibold text-[var(--color-accent)]">
-                      Mariankę i Emilkę
-                    </span>
                     , które nieustannie motywują mnie do dalszego rozwoju,
                     zadając mądre pytania i zapraszając mnie do swojego
                     magicznego, dziecięcego świata.
