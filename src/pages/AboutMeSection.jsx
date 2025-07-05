@@ -343,8 +343,8 @@ const AboutMeSection = () => {
                 </h3>
                 <div className="space-y-4 text-[var(--color-primary)] leading-relaxed">
                   <p>
-                    Mam dwie cudowne Córeczki:{" "}
-                    , które nieustannie motywują mnie do dalszego rozwoju,
+                    Mam dwie cudowne Córeczki 
+                     które nieustannie motywują mnie do dalszego rozwoju,
                     zadając mądre pytania i zapraszając mnie do swojego
                     magicznego, dziecięcego świata.
                   </p>
